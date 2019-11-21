@@ -1,1 +1,12 @@
 /.metadata/
+### STS ###
+.settings
+.springBeans
+.apt_generated
+.classpath
+.factorypath
+.project
+.sts4-cache
+
+.recommenders
+RemoteSystemsTempFiles/
