@@ -25,6 +25,8 @@
   #deals {padding-top:50px;height:600px;color: white; background-color:#A7BA9E}
   #logout {padding-top:50px;height:100px;color: white; background-color: white;}
   </style>
+  <title>Home Page</title>
+
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
