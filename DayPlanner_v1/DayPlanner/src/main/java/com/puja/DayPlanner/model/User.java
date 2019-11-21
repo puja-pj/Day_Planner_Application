@@ -1,6 +1,7 @@
 package com.puja.DayPlanner.model;
 
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -18,7 +19,7 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="user")
-public class User {
+public class User implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
