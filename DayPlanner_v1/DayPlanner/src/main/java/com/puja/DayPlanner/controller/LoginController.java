@@ -68,8 +68,9 @@ public class LoginController {
 				System.out.println("Inside else username is :"+loginModel.getUsername());
 				System.out.println("Inside else User id is :"+user.getId());
 				if((user !=null) & (user.getPassword().equals(loginModel.getPassword()))) {
-					System.out.println("Inside if loop username is :"+loginModel.getUsername());
+					System.out.println("Inside if loop username is :"+user.getUsername());
 					model.addAttribute("userObj", user);
+					System.out.println("before redirect in login controller");
 					return "redirect:/userHome";
 	
 				}
