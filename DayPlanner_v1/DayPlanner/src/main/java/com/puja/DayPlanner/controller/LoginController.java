@@ -103,7 +103,7 @@ public class LoginController {
 	      model.addAttribute("iconurl", iconurl);
 	      
 	      //Popular Deals
-	      Map<String, String> mapObject=this.dealsService.Scrapper();
+	      Map<String, String> mapObject=this.dealsService.Scrapper(city);
 	      model.addAttribute("deals", mapObject);
 	      
 	      model.addAttribute("user", userObj);

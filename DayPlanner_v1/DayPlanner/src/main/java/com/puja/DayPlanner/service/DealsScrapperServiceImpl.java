@@ -12,13 +12,14 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class DealsScrapperServiceImpl {
-	public Map<String, String> Scrapper() {
+	public Map<String, String> Scrapper(String city) {
+		String url="https://www.redflagdeals.com/in/"+city+"/deals/?search_type=popular";
 		Map<String, String> deals = new LinkedHashMap<String, String>();
 		//deals.put("Best Buy", "Shop Black Friday 2019 Prices Now at Best Buy");
 		String data1 = null;
 		String data2 = null;
 		try {
-		Document doc = Jsoup.connect("https://www.redflagdeals.com/in/ottawa/deals/?search_type=popular").get();
+		Document doc = Jsoup.connect(url).get();
 		Elements elements = doc.getElementsByClass("list_item_body");
 		int i = 1;
 		for (Element element : elements) {
