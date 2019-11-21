@@ -10,7 +10,6 @@ import com.puja.DayPlanner.model.User;
 
 public interface NotesService {
 	Notes create(Notes notes);
-	Notes edit(Notes notes);
 	List<Notes> findAll(User user);
 	void deleteNote(Long id);
 	Notes getNote(Long id);

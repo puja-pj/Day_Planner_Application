@@ -57,26 +57,18 @@ public class LoginController {
 		
 	@RequestMapping(value="/login",method=RequestMethod.POST)
 	public String processLogin(@Valid @ModelAttribute("login") Login loginModel, BindingResult bindingResult,Model model) {
-		//final RedirectAttributes redirectAttributes
-		System.out.println("Outside else username is :"+loginModel.getUsername());
 		if(bindingResult.hasErrors()) {
-			System.out.println("Inside Binding result username is :"+loginModel.getUsername());
 			return "login";
 		}
 		else {
 				User user=userService.getByUsername(loginModel.getUsername());
-				System.out.println("Inside else username is :"+loginModel.getUsername());
-				System.out.println("Inside else User id is :"+user.getId());
 				if((user !=null) & (user.getPassword().equals(loginModel.getPassword()))) {
-					System.out.println("Inside if loop username is :"+user.getUsername());
 					model.addAttribute("userObj", user);
-					System.out.println("before redirect in login controller");
 					return "redirect:/userHome";
 	
 				}
 
 			else {
-				System.out.println("Not porper username and password");
 				return "errorPage";
 			}
 			
@@ -88,13 +80,13 @@ public class LoginController {
 		public String userHome(@ModelAttribute("userObj") User userObj,SessionStatus sessionStatus,
 				Model model) {
 			
-		System.out.println("flash atrribute:"+userObj.getId());
+	
 		
 		//Create Notes
 		Notes notes=new Notes();
 		notes.setUser(userObj);
 		model.addAttribute("notes", notes);
-		System.out.println("user in create Notes:"+userObj.getUsername());
+		
 			
 		 // Weather Updates	
 		 String city=userObj.getCity();
@@ -109,9 +101,7 @@ public class LoginController {
 	      
 	      model.addAttribute("user", userObj);
 	    
-	      //view Notes
-	     /* List<Notes> AllNotes=noteService.findAll();
-			model.addAttribute("AllNotes", llNotes);*/		
+	
 			return "userHome";
 		}
 		
@@ -119,18 +109,13 @@ public class LoginController {
 		
 		@RequestMapping(value="/userHome",method=RequestMethod.POST)
 		public String createNoteProcess(@Valid @ModelAttribute("notes") Notes notes,BindingResult bindingResult){
-			System.out.println("Entered Post method");
+			
 			if(bindingResult.hasErrors()) {			
 				return "userHome";
 			}
 			else {
-				System.out.println("note name :"+notes.getNoteName());
-				System.out.println("note name :"+notes.getContent());
-				//System.out.println("note with Id:"+notes.getUser().getId());
-				//User user2=this.userservice.findById(1L);
 				
-				System.out.println("note after setting user");
-				System.out.println("note username :"+notes.getUser().getUsername());
+			
 				noteService.create(notes);
 				
 				return "redirect:/userHome";
@@ -138,26 +123,6 @@ public class LoginController {
 			}
 		
 		
-		
-		/*@RequestMapping(value="/createNotes/{userid}",method=RequestMethod.GET)
-		public String createNoteProcess(@Valid @ModelAttribute("notes") Notes notes,BindingResult bindingResult,
-										@PathVariable Long userid){
-			if(bindingResult.hasErrors()) {			
-				return "userHome";
-			}
-			else {
-				System.out.println("note name :"+notes.getNoteName());
-				System.out.println("note name :"+notes.getContent());
-				
-				User user=this.userservice.findById(userid);
-				notes.setUser(user);
-				System.out.println("note after setting user");
-				//System.out.println("note username :"+notes.getUser().getUsername());
-				noteService.create(notes);
-				return "redirect:/userHome";
-			}
-		}*/
-		//#A7BA9E;
 		@RequestMapping(value="/logout",method=RequestMethod.GET)
 		public String logout(SessionStatus sessionStatus){
 			sessionStatus.setComplete();
@@ -169,10 +134,9 @@ public class LoginController {
 		public String viewNotes(Model model,
 				@ModelAttribute("userObj") User userObj,SessionStatus sessionStatus){
 
-			System.out.println("user name in view notes"+userObj.getUsername());
-			List<Notes> notes=noteService.findAll(userObj);
 		
-			System.out.println("Notes List is "+notes);
+			List<Notes> notes=noteService.findAll(userObj);
+	
 			model.addAttribute("AllNotes", notes);
 			
 			return "viewNotes";
@@ -182,12 +146,11 @@ public class LoginController {
 		@RequestMapping(value="/deleteNotes/{id}",method=RequestMethod.GET)
 		public String deleteNotes(Model model,@PathVariable String id) {
 			Long noteid=Long.parseLong(id);
-			System.out.println("noteid in dlete notes"+noteid);
+			
 			this.noteService.deleteNote(noteid);
 			return "redirect:/viewNotes";
 		}
 		
-		//<a href="deleteNotes/"+${notes.noteid}"
 		
 		
 		
@@ -195,16 +158,6 @@ public class LoginController {
 		
 
 
-		
-	
-	
-	
-	/*@RequestMapping("/viewNote/{noteName}")
-	public String getNote(@PathVariable("noteName") String noteName,Model model) {
-		Notes notes=this.noteService.getNote(noteName);
-		model.addAttribute("Notes",notes);
-		return "viewNote";
-		}*/
 	
 	
 

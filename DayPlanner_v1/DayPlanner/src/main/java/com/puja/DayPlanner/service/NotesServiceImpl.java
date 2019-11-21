@@ -24,11 +24,6 @@ public class NotesServiceImpl implements NotesService{
 	}
 
 
-	@Override
-	public Notes edit(Notes notes) {
-		// TODO Auto-generated method stub
-		return this.notesRepo.save(notes);
-	}
 
 	@Override
 	public List<Notes> findAll(User user) {

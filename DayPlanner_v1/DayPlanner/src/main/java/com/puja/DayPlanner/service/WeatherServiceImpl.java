@@ -20,9 +20,6 @@ import com.puja.DayPlanner.model.Weather;
 public class WeatherServiceImpl implements WeatherService{
 	
 
-	//private static final String FORECAST_URL =
-			//"http://api.openweathermap.org/data/2.5/forecast?q={city},{country}&APPID={key}";
-
 	
 	private final RestTemplate restTemplate;
 

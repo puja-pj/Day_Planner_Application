@@ -35,9 +35,7 @@ public class HomeController {
 			
 	@RequestMapping(value="/register",method=RequestMethod.POST)
 	public String saveUser(@Valid @ModelAttribute("user") User userModel,BindingResult bindingResult) {
-		//System.out.println("username is :"+userModel.getUsername());
 		if(bindingResult.hasErrors()) {
-			System.out.println("Register username is :"+userModel.getUsername());
 			return "register";
 		}
 		else {

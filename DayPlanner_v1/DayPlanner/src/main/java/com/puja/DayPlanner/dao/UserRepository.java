@@ -11,7 +11,6 @@ import com.puja.DayPlanner.model.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User,Long>{
-	//User create(User user);
 	
 	public User findByUsername(String username);
 
