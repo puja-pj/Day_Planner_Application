@@ -56,7 +56,7 @@ h1 {
 		</div>
 		<div class="row">
 			<div class="col-sm-6" id="logo">
-				<img src="/img/quote.png" alt="/img/background.png">
+				<img src="/images/quote.png" alt="/img/background.png">
 
 			</div>
 

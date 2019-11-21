@@ -31,7 +31,6 @@ import com.puja.DayPlanner.service.WeatherService;
 
 @Controller
 @SessionAttributes("userObj")
-@RequestMapping(value="/")
 public class LoginController {
 
 	@Autowired

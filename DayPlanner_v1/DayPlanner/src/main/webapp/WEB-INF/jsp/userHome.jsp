@@ -85,7 +85,7 @@
 </div>
 </div>
 
-<div id="weather" class="container-fluid" style="background-image: url(../img/weather.jpg);">
+<div id="weather" class="container-fluid" style="background-image: url(../images/weather.jpg);">
 
 <div class="container">
 <h2>Weather in ${user.city}, Canada</h2><br>
