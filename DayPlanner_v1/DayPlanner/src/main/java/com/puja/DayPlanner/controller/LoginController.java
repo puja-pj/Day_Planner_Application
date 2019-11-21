@@ -28,6 +28,7 @@ import com.puja.DayPlanner.service.UserService;
 import com.puja.DayPlanner.service.WeatherService;
 
 
+
 @Controller
 @SessionAttributes("userObj")
 @RequestMapping(value="/")

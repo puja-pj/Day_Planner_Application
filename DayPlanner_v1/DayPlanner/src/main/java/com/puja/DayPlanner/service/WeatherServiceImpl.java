@@ -17,7 +17,7 @@ import com.puja.DayPlanner.model.Weather;
 
 
 @Service
-public class WeatherServiceImpl {
+public class WeatherServiceImpl implements WeatherService{
 	
 
 	//private static final String FORECAST_URL =

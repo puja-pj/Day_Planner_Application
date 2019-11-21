@@ -11,7 +11,7 @@ import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
 
 @Service
-public class DealsScrapperServiceImpl {
+public class DealsScrapperServiceImpl implements DealsScrapperService{
 	public Map<String, String> Scrapper(String city) {
 		String url="https://www.redflagdeals.com/in/"+city+"/deals/?search_type=popular";
 		Map<String, String> deals = new LinkedHashMap<String, String>();
