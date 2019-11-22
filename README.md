@@ -15,7 +15,7 @@
 * Displays popular Deals in user city.
 
 **What’s inside**
-The project is built using Spring Boot, Spring MVC, Hibernate, MYSQL, HTML, Bootstrap, JSP, Maven, Git
+The project is built using Spring Boot, Spring MVC, Sping JPA,Hibernate, MYSQL, HTML, Bootstrap, JSP, Maven, Git
 
 **Weather Data** :  Weather data is obtained from openweathermap API.
 
