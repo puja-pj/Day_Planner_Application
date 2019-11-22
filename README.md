@@ -23,4 +23,4 @@ The project is built using Spring Boot, Spring MVC, Hibernate, MYSQL, HTML, Boot
 
 The application is deployed in google cloud.
 
-**Link to Web Page** : https://dayplanner-dot-dayplanner-259702.appspot.com/
+**Day Planner Application Link** : https://dayplanner-dot-dayplanner-259702.appspot.com/
