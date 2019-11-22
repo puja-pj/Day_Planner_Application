@@ -13,9 +13,14 @@
 * Delete Notes
 * Displays weather in user City.
 * Displays popular Deals in user city.
+
 **What’s inside**
 The project is built using Spring Boot, Spring MVC, Hibernate, MYSQL, HTML, Bootstrap, JSP, Maven, Git
+
 **Weather Data** :  Weather data is obtained from openweathermap API.
+
 **Deals Data**:  By scraping redflagdeals.com, deals data is obtained.
+
 The application is deployed in google cloud.
+
 **Link to Web Page** : https://dayplanner-dot-dayplanner-259702.appspot.com/
