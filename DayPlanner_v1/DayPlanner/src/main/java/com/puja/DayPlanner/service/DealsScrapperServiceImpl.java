@@ -16,17 +16,19 @@ public class DealsScrapperServiceImpl implements DealsScrapperService{
 		
 		Map<String, String> deals = new LinkedHashMap<String, String>();
 			
-		String url="https://www.redflagdeals.com/in/"+city+"/deals/?search_type=popular";
+		String dealUrl="https://www.redflagdeals.com/in/"+city+"/deals/?search_type=popular";
+		
+		String url = ("http://api.scraperapi.com/?api_key=99869a08744390b2b3c700eac7663298&url="+dealUrl);
 		
 		
 		String data1 = null;
 		String data2 = null;
 		try {
-		Document doc = Jsoup.connect(url).get();
+		Document doc = Jsoup.connect(url).timeout(60000).get();
 		Elements elements = doc.getElementsByClass("list_item_body");
 		int i = 1;
 		for (Element element : elements) {
-			if (i > 10) {
+			if (i > 12) {
 				break;
 			}
 			data1 = element.getElementsByClass("offer_dealer").text();
