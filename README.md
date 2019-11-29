@@ -4,6 +4,9 @@
 
 **Day Planner Application**:  One can Register , login , create Notes like to-do, shopping list etc.  check weather and deals based on the city info given during registration.
 
+**Demo of Application**
+![](demo.gif)
+
 **Features**
 * Register
 * Login
